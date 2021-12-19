@@ -1,4 +1,16 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+    height: 80px;
+    background: $colorBlack;
+    position: relative;
+
+
+    h2{
+      text-align: center;
+      color: $colorWhite;
+      line-height: 80px;
+      margin: 0;
+      font-size: 14px;
+    }
+  }
