@@ -1,27 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Header } from '../Header/Header';
-import { Footer } from '../Footer/Footer';
 
 
-import clsx from 'clsx';
 
 // import { connect } from 'react-redux';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
+import { NavLink } from 'react-router-dom';
+import styles from './NavButton.module.scss';
 
-import styles from './MainLayout.module.scss';
-
-const Component = ({className, children}) => (
-  <div className={clsx(className, styles.root)}>
-    <Header />
-    {children}
-    <Footer />
-  </div>
+const Component = ({name, link}) => (
+  <NavLink exact to={link} className={styles.root} activeClassName={styles.active}>
+    {name}
+  </NavLink>
 );
 
 Component.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
+  name: PropTypes.string,
+  link: PropTypes.string,
 };
 
 // const mapStateToProps = state => ({
@@ -35,7 +30,7 @@ Component.propTypes = {
 // const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  Component as MainLayout,
-  // Container as MainLayout,
-  Component as MainLayoutComponent,
+  Component as NavButton,
+  // Container as NavButton,
+  Component as NavButtonComponent,
 };

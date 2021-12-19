@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { PostEditComponent } from './PostEdit';
+import { NavButtonComponent } from './NavButton';
 
-describe('Component PostEdit', () => {
+describe('Component NavButton', () => {
   it('should render without crashing', () => {
-    const component = shallow(<PostEditComponent />);
+    const component = shallow(<NavButtonComponent />);
     expect(component).toBeTruthy();
   });
 });

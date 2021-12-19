@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { HomepageComponent } from './Homepage';
+import { FooterComponent } from './Footer';
 
-describe('Component Homepage', () => {
+describe('Component Footer', () => {
   it('should render without crashing', () => {
-    const component = shallow(<HomepageComponent />);
+    const component = shallow(<FooterComponent />);
     expect(component).toBeTruthy();
   });
 });

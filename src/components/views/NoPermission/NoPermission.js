@@ -6,11 +6,11 @@ import clsx from 'clsx';
 // import { connect } from 'react-redux';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
 
-import styles from './Post.module.scss';
+import styles from './NoPermission.module.scss';
 
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
-    <h2>Post</h2>
+    <h2>NoPermission</h2>
     {children}
   </div>
 );
@@ -31,7 +31,7 @@ Component.propTypes = {
 // const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  Component as Post,
-  // Container as Post,
-  Component as PostComponent,
+  Component as NoPermission,
+  // Container as NoPermission,
+  Component as NoPermissionComponent,
 };
