@@ -26,43 +26,40 @@ const Component = ({className, children}) => {
       <Slider {...settings} className={styles.slider}>
         <div className={styles.imageWrapper}>
           <img  alt= '' src='https://images.pexels.com/photos/3068579/pexels-photo-3068579.jpeg?cs=srgb&dl=pexels-maria-georgieva-3068579.jpg&fm=jpg'></img>
-          <h4>Interactive</h4>
+          <div className={styles.title}>Interactive</div>
         </div>
         <div className={styles.imageWrapper}>
           <img  alt= '' src='https://images.pexels.com/photos/386025/pexels-photo-386025.jpeg?cs=srgb&dl=pexels-nubia-navarro-%28nubikini%29-386025.jpg&fm=jpg'></img>
-          <h4>Popular</h4>
+          <div className={styles.title}>Popular</div>
         </div>
         <div className={styles.imageWrapper}>
           <img  alt= '' src='https://images.pexels.com/photos/8409849/pexels-photo-8409849.jpeg?cs=srgb&dl=pexels-hanna-auramenka-8409849.jpg&fm=jpg'></img>
-          <h4>Educational</h4>
+          <div className={styles.title}>Educational</div>
         </div>
         <div className={styles.imageWrapper}>
           <img  alt= '' src='https://images.pexels.com/photos/264907/pexels-photo-264907.jpeg?cs=srgb&dl=pexels-pixabay-264907.jpg&fm=jpg'></img>
-          <h4>For babies</h4>
+          <div className={styles.title}>For babies</div>
         </div>
       </Slider>
       <div className={styles.sliderContent}>
         <div className={styles.wrapper}>
           <div className={styles.topContent}>
             <h1>TOYS PARADISE</h1>
-          </div>
-          <div className={styles.bottomContent}>
-            <Button
-              className={styles.button}
-              variant='contained'
-              color='primary'
-              component={Link}
-              to={'/shop'}
-            >
-            START SHOPPING
-            </Button>
-
-          </div>
+          </div>          
         </div>
-
+      </div> 
+      <div className={styles.bottomContent}>
+        <Button
+          className={styles.button}
+          variant='contained'
+          color='primary'
+          component={Link}
+          to={'/shop'}
+        >
+            START SHOPPING
+        </Button>
       </div>
     </div>
-
   );
 };
 
