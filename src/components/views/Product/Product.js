@@ -1,37 +1,96 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
-
-import clsx from 'clsx';
-
-// import { connect } from 'react-redux';
-// import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
-
+import { connect } from 'react-redux';
+import { getOneProduct, fetchOneProduct} from '../../../redux/productsRedux';
+import { addToCart} from '../../../redux/cartRedux';
+import { addModal } from '../../../redux/modalRedux';
 import styles from './Product.module.scss';
+import { Container as ContainerPlus } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import TextField from '@material-ui/core/TextField';
+import { Button } from '@material-ui/core';
 
-const Component = ({className, children}) => (
-  <div className={clsx(className, styles.root)}>
-    <h2>Product</h2>
-    {children}
-  </div>
-);
+const Component = ({ product, fetchOneProduct, addModal, addToCart }) => {
+  useEffect(() => {
+    fetchOneProduct();
+  }, [fetchOneProduct]);
 
-Component.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
+
+  const { image, price, name, text, image2, image3} = product;
+  const [quantity, setQuantity] = React.useState(1);
+
+  const handleAddToCart = () => {
+    const output = {
+      image, price, name, quantity,
+    };
+    addModal();
+    addToCart(output);
+  };
+
+
+  return (
+    <ContainerPlus>
+      <div className={styles.root}>
+        <div className={styles.link}><Link to='/'>Back to HOME</Link></div>
+        <div className={styles.leftWrapper}>
+          <div className={styles.imageWrapper}>
+            <img src={image} alt=''></img>
+          </div>
+          <div className={styles.imageWrapper}>
+            <img src={image2} alt=''></img>
+          </div>
+          <div className={styles.imageWrapper}>
+            <img src={image3} alt=''></img>
+          </div>
+          <div className={styles.textWrapper}>
+            <p>{text}</p>
+          </div>
+        </div>
+        <div className={styles.rightWrapper}>
+          <h1>{name}</h1>
+          <h2>{price}$</h2>
+          <TextField
+            className={styles.quantity}
+            label="Quantity"
+            type="number"
+            value={quantity}
+            onChange={(e) => setQuantity(Number(e.target.value))}
+            inputProps={{ min: 1 }}
+            InputLabelProps={{
+              shrink: true,
+            }} />
+          <Button className={styles.btn} onClick={() => handleAddToCart()}> Add to Card </Button>
+          <Button className={styles.btn}> Buy now </Button>
+        </div>
+       </div>
+    </ContainerPlus>
+
+  );
 };
 
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
+Component.propTypes = {
+  fetchOneProduct: PropTypes.func,
+  product: PropTypes.object,
+  addToCart: PropTypes.func,
+  cartData: PropTypes.array,
+  addModal: PropTypes.func,
+  removeModal: PropTypes.func,
+};
 
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
+const mapStateToProps = state => ({
+  product: getOneProduct(state),
+});
 
-// const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
+const mapDispatchToProps = (dispatch, props) => ({
+  fetchOneProduct: () => dispatch(fetchOneProduct(props.match.params.id)),
+  addToCart: arg => dispatch(addToCart(arg)),
+  addModal: () => dispatch(addModal()),
+});
+
+const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  Component as Product,
-  // Container as Product,
+  //Component as Product,
+  Container as Product,
   Component as ProductComponent,
 };

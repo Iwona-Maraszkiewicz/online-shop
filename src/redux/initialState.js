@@ -28,5 +28,8 @@ export const initialState = {
       active: false,
       error: false,
     },
+    oneProduct: {},
   },
+  cart: [],
+  modal: false,
 };
