@@ -1,37 +1,51 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-
-import clsx from 'clsx';
-
-// import { connect } from 'react-redux';
-// import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
-
+import { getAll, fetchProducts } from '../../../redux/productsRedux';
+import { Container as ContainerPlus } from '@material-ui/core';
+import { connect } from 'react-redux';
 import styles from './Shop.module.scss';
 
-const Component = ({className, children}) => (
-  <div className={clsx(className, styles.root)}>
-    <h2>Shop</h2>
-    {children}
-  </div>
-);
+import { ShopBox } from '../../features/ShopBox/ShopBox';
 
-Component.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
+const Component = ({products, fetchProducts}) => {
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  return (
+    <div className={styles.root}>
+      <div className={styles.banner}>
+        <h1>TOYS SHOP</h1>
+      </div>
+      <h2 className={styles.subTitle}>FIND TOY AND ADD TO CART</h2>
+      <ContainerPlus>
+        <div className={styles.products}>
+          {products.map(data => 
+            <ShopBox {...data} key={data._id} /> 
+          )}
+        </div>
+      </ContainerPlus>
+    </div>
+  );
 };
 
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
+Component.propTypes = {
+  products: PropTypes.array,
+  fetchProducts: PropTypes.func,
+};
 
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
+const mapStateToProps = state => ({
+  products: getAll(state),
+});
 
-// const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
+const mapDispatchToProps = dispatch => ({
+  fetchProducts: () => dispatch(fetchProducts()),
+});
+
+const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  Component as Shop,
-  // Container as Shop,
+ // Component as Shop,
+  Container as Shop,
   Component as ShopComponent,
 };
