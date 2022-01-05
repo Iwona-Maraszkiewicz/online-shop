@@ -1,37 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
-import clsx from 'clsx';
-
-// import { connect } from 'react-redux';
-// import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
-
 import styles from './About.module.scss';
 
-const Component = ({className, children}) => (
-  <div className={clsx(className, styles.root)}>
-    <h2>About</h2>
-    {children}
+const Component = () => (
+  <div className={styles.root}>
+    <div className={styles.banner}>
+      <h1>TOYS SHOP</h1>
+    </div>
+    <h2 className={styles.subTitle}>LOREM IPSUM</h2>
+    <h4 className={styles.text}>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum</h4>
+
+
   </div>
 );
 
-Component.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-};
-
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
-
-// const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
   Component as About,
-  // Container as About,
   Component as AboutComponent,
 };
