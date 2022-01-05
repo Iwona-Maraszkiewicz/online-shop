@@ -3,12 +3,18 @@ const cors = require('cors');
 const path = require('path');
 const mongoose = require('mongoose');
 require('dotenv').config();
+const session = require('express-session');
 
 const productsRoutes = require('./routes/products.routes');
 
 const app = express();
 
 /* MIDDLEWARE */
+app.use(session({
+  secret: 'deliciousCookie',
+  resave: true,
+  saveUninitialized: true,
+}));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
