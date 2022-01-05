@@ -28,7 +28,7 @@ const Component = ({image, name, price, _id, addModal, addToCart}) => {
       <h4>{name}</h4>
       <h4>{price} $ </h4>
       <QuantityButton quantity={quantity} setQuantity={setQuantity} />
-      <a className={styles.cartButton} onClick={() => handleAddToCart()}>Add to Cart</a>
+      <span className={styles.cartButton} onClick={() => handleAddToCart()}>Add to Cart</span>
     </div>
       );
     };

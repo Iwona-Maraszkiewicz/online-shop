@@ -8,7 +8,7 @@ import { removeFromCart } from '../../../redux/cartRedux';
 import styles from './CartBox.module.scss';
 
 const Component = ({ data, removeFromCart }) => {
-  const { image, price, name, quantity, id} = data;
+  const { image, price, name, quantity, id, description} = data;
   const [quantityState, setQuantityState] = useState(quantity);
 
   return (
