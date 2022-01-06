@@ -15,18 +15,28 @@ const Component = ({ products, fetchProducts }) => {
   useEffect(() => {
     fetchProducts();
   }, []);
+
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 100,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
+          
   };
 
   return (
     <div className={styles.root}>
-
+      
+        <div className={styles.logoWrapper}>
+          <h1> FIND TOY AND ADD TO CART </h1>
+          <div className={styles.imageWrapper}>
+          
+          <div className={styles.title}>Interactive</div>
+        </div>
+        </div>
+      
       <Slider {...settings} className={styles.slider}>
         <div className={styles.imageWrapper}>
           <img  alt= '' src='https://images.pexels.com/photos/3068579/pexels-photo-3068579.jpeg?cs=srgb&dl=pexels-maria-georgieva-3068579.jpg&fm=jpg'></img>
@@ -44,6 +54,11 @@ const Component = ({ products, fetchProducts }) => {
           <img  alt= '' src='https://images.pexels.com/photos/264907/pexels-photo-264907.jpeg?cs=srgb&dl=pexels-pixabay-264907.jpg&fm=jpg'></img>
           <div className={styles.title}>For babies</div>
         </div>
+        <div className={styles.imageWrapper}>
+          <img  alt= '' src='https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg?cs=srgb&dl=pexels-moose-photos-1037995.jpg&fm=jpg'></img>
+          <div className={styles.title}>Interactive</div>
+        </div>
+        
       </Slider>
       <div className={styles.sliderContent}>
         <div className={styles.wrapper}>
@@ -60,12 +75,12 @@ const Component = ({ products, fetchProducts }) => {
           component={Link}
           to={'/shop'}
         >
-            START SHOPPING
+            FIND TOY AND ADD TO CART
         </Button>
       </div>
       <ContainerPlus>
         <div className={styles.productsWrapper}>
-          <h1> Our products </h1>
+          <h1> FIND TOY AND ADD TO CART </h1>
           <div className={styles.boxesWrapper}>
             {products.map(data => 
               <Box key={data._id} data={data} />

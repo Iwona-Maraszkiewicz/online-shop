@@ -1,7 +1,7 @@
 export const initialState = {
   products: {
     data: [ 
-      {   
+      /*{   
         image:
           'https://images.pexels.com/photos/3068579/pexels-photo-3068579.jpeg?cs=srgb&dl=pexels-maria-georgieva-3068579.jpg&fm=jpg',
         name: 'klocki',
@@ -22,7 +22,7 @@ export const initialState = {
         price: 50,
         text: 'Lorem ipsum lorem ipsum',       
       },
-     
+     */
     ],
     loading: {
       active: false,

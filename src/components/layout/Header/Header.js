@@ -2,41 +2,51 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import clsx from 'clsx';
-import { Container } from '@material-ui/core';
-import { NavButton } from '../../common/NavButton/NavButton';
 
+import { HashLink } from 'react-router-hash-link';
 // import { connect } from 'react-redux';
-// import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
+// import { getAll, fetchAllProducts } from '../../../redux/productsRedux.js';
 
 import styles from './Header.module.scss';
 
-const Component = ({className}) => (
-  <div className={clsx(className, styles.root)}>
-    <Container className={styles.container}>
-      <NavButton name={'Home'} link='/' />
-      <NavButton name={'About'} link='/about' />
-      <NavButton name={'Shop'} link='/shop' />
-      <NavButton name={'Cart'} link='/cart' />
-    </Container>
-  </div>
-);
 
-Component.propTypes = {  
+const Component = ({ className }) => {
+
+  return (
+    <nav className={clsx(className, styles.navigation_bar)}>
+      <div className={clsx(className, styles.header_column)}>
+        <HashLink to='/' smooth>Toys shop</HashLink>
+      </div>
+      <div className={clsx(className, styles.header_column)}>
+        <HashLink to='/' smooth>Home</HashLink>
+        <HashLink to='/about' smooth>About</HashLink>
+        <HashLink to='/shop' smooth>Shop</HashLink>
+        <HashLink to='/contact' smooth>Contact</HashLink>
+      </div>
+      <div className={clsx(className, styles.header_column)}>
+        <HashLink to='/cart' smooth>Cart</HashLink>
+      </div>
+    </nav>
+  );
+};
+
+Component.propTypes = {
+  children: PropTypes.node,
   className: PropTypes.string,
 };
 
 // const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
+//   products: getAll(state),
 // });
 
 // const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
+//   fetchAllProducts: () => dispatch(fetchAllProducts()),
 // });
 
 // const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
   Component as Header,
-  // Container as Header,
+  //Container as ProductsList,
   Component as HeaderComponent,
 };

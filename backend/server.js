@@ -34,7 +34,7 @@ app.use('*', (req, res) => {
 });
 
 /* MONGOOSE */
-mongoose.connect('mongodb://localhost:27017/online-shop', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://Iwona:Iwona1@cluster0.yfdpg.mongodb.net/online-shop?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.once('open', () => {
   console.log('Successfully connected to the database');

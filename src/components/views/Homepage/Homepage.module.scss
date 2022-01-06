@@ -3,9 +3,23 @@
 .root {
     padding-top: 70px;
     //height: 870px;
+
+    .logoWrapper {
+      margin-top: -50px;
+      background-color: rgba(199, 236, 238,1.0);
+      height: 720px;
+      h1 {
+        text-align: center;
+        color: $colorGrey;
+        font-weight: 100;
+        margin-bottom: 50px;
+     
+      }
+    }
+
     .slider {
       position: relative;
-
+     // height: 660px;
       button:first-of-type {
         left: 10px;
         z-index: 999;
@@ -54,19 +68,19 @@
 
     .sliderContent {
         position: absolute;
-        top: 20%;
+        top: 15%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 998;
-        width: 600px;
+        width: 1000px;
         height: 150px;
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(243, 230, 230, 0.9);
         display: flex;
         justify-content: center;
         align-items: center;
 
         .wrapper {
-          border: 3px solid $colorBlack;
+          //border: 3px solid grey;
           height: 90%;
           width: 95%;
           display: flex;
@@ -79,7 +93,9 @@
             align-items: center;
             justify-content: center;
             font-size: 30px;
-            color: $colorGreen;
+            color: rgba(255, 184, 184,1.0);
+            letter-spacing: 15px;
+            font-family: cursive;
             
             h1 {
               margin: 0;
@@ -87,29 +103,30 @@
           }
         }
       }
-      .bottomContent {
-
+      .bottomContent {        
         display: flex;
         align-items: center;
         justify-content: center;
-        transform: translate(0%, -450%);
-  
+        transform: translate(0%, -750%);
+        
         .button {
           font-size: 40px;
-          background-color: rgba(49, 199, 29, 0.8);
+          background-color: rgba(255, 184, 184,0.8);
           font-family: cursive;
           &:hover{
-            background-color: $colorActiveGreen;
+            background-color: rgba(255, 204, 204,1.0);
           }
         } 
       }
       .productsWrapper {
         margin-top: -50px;
+        
         h1 {
           text-align: center;
           color: $colorGrey;
           font-weight: 100;
           margin-bottom: 50px;
+       
         }
         .boxesWrapper {
           display: flex;
