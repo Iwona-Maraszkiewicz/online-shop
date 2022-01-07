@@ -6,7 +6,7 @@ import { addToCart} from '../../../redux/cartRedux';
 import { addModal } from '../../../redux/modalRedux';
 import styles from './Product.module.scss';
 import { Container as ContainerPlus } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
 import { Button } from '@material-ui/core';
 import Slider from 'react-slick';
@@ -41,8 +41,8 @@ const Component = ({ product, fetchOneProduct, addModal, addToCart }) => {
   return (
     <ContainerPlus>
       <div className={styles.root}>
-        <div className={styles.link}><Link to='/'>Back to HOME</Link></div>
         <div className={styles.leftWrapper}>
+          <h1>{name}</h1>
         <Slider {...settings} className={styles.imageWrapper}>
             <div>
               <img src={image} alt=''></img>
@@ -53,13 +53,11 @@ const Component = ({ product, fetchOneProduct, addModal, addToCart }) => {
             <div>
               <img src={image3} alt=''></img>
             </div>
-        </Slider>
-          <div className={styles.textWrapper}>
-            <p>{text}</p>
-          </div>
+        </Slider>          
         </div>
-        <div className={styles.rightWrapper}>
-          <h1>{name}</h1>
+        <div className={styles.rightWrapper}>      
+          <h3>{text}</h3>
+          <h5>Lorem ipsum Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
           <h2>{price}$</h2>
           <TextField
             className={styles.quantity}

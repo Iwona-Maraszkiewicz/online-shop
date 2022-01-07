@@ -2,42 +2,35 @@
 
 .root {
     min-height: calc(100vh - 50px);
-    padding-top: 150px;
+    padding-top: 100px;
     display: flex;
     justify-content: center;
-    padding-top: 160px;
     position: relative;
 
-    .link{
-      position: absolute;
-      top: 100px;
-      left: 0;
-      font-size: 20px;
-
-      a{
-        font-weight: bold;
-
-        &:hover{
-          color: $colorGreen;
-        }
-      }
-    }
-
-    .leftWrapper{
-      width: 50%;
+    .leftWrapper {
+      width: 60%;
       display: flex;
       align-items: center;
       flex-direction: column;
       padding-right: 30px;
 
-      .imageWrapper{
+      h1 {
+        display: flex;
+        justify-content: center;
+        font-family: cursive;
+        text-transform: uppercase;
+        color: $colorGrey;
+    }
+      .imageWrapper {
         width: 100%;
         height: 500px;
-
+        
         img{
           object-fit: cover;
           width: 100%;
           height: 500px;
+          border: 1px solid $colorWhite;
+          border-radius: 3%;
         }
       }
       button:first-of-type {
@@ -69,19 +62,38 @@
     }
 
     .rightWrapper{
-        width: 30%;
+        width: 25%;
+        height: 70%;
+        margin-top: 80px;
         display: flex;
         flex-direction: column;
-        justify-content: center;   
+        justify-content: center;  
+        border: 1px solid lightGrey;
+        border-radius: 2%; 
+        color: $colorGrey;
 
-        h1,h2 {
+        h2, h3, h5 {
             display: flex;
             justify-content: center;
+            margin: 10px;            
         }
-
+        h2 {
+          color: $colorDarkPink;
+          font-size: 30px;
+          font-weight: 900;
+        }
+        h3 {
+          text-transform: uppercase;
+          font-family: cursive;
+        }
+        h5 {
+          color: rgba(168, 164, 164, 0.863);
+          letter-spacing: 1px;
+          font-weight: 200;
+          font-family: cursive;
+        }
         .quantity{
-
-          border: 1px solid $colorGrey;
+          border: 1px solid lightGrey;
           padding: 0 5px;
             input{
                 text-align: center;
@@ -96,21 +108,22 @@
         }
 
         .btn{
-          border: 1px solid $colorBlack;
+          border: 1px solid lightGrey;
           border-radius: 0;
           margin-top: 10px;
         }
 
         .btn:nth-of-type(2){
-          background: $colorGreen;
-          color: $colorWhite;
+          background: $colorLightPink;
+          color: $colorGrey;
 
           &:hover{
-            background: $colorActiveGreen;
+            background: $colorDarkPink;
+            color: $colorWhite;
           }
         }
         .btn:nth-of-type(1){
-            margin-top: 40px;
+            margin-top: 10px;
         }
     }
   }

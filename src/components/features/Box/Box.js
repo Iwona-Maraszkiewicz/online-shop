@@ -23,9 +23,7 @@ const Component = ({data}) => {
       onMouseEnter={() => SetOnMouseEnter()}
       onMouseLeave={() => SetOnMouseLeave()}
     >
-      <div className={styles.imageWrapper}>
-      <img alt='' src={image}></img>
-      </div>
+      
       {
         isShown === false && isTimer === false ?
           <div className={styles.textWrapper}>
@@ -33,10 +31,12 @@ const Component = ({data}) => {
             <h5>{price} $</h5>
           </div> :
           <div className={styles.textWrapper}>
-            <div><Link to={`/product/${_id}`}>View Details</Link></div>
+            <div><Link to={`/product/${_id}`}>VIEW DETAILS</Link></div>
           </div>
       }
-      
+      <div className={styles.imageWrapper}>
+      <img alt='' src={image}></img>
+      </div>
     </div>
   );
 };

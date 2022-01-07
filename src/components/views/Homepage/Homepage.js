@@ -42,23 +42,23 @@ const Component = ({ products, fetchProducts }) => {
       <Slider {...settings} className={styles.slider}>
         <div className={styles.imageWrapper}>
           <img  alt= '' src='https://images.pexels.com/photos/3068579/pexels-photo-3068579.jpeg?cs=srgb&dl=pexels-maria-georgieva-3068579.jpg&fm=jpg'></img>
-          <div className={styles.title}>Interactive</div>
+          <div className={styles.title}>INTERACTIVE</div>
         </div>
         <div className={styles.imageWrapper}>
           <img  alt= '' src='https://images.pexels.com/photos/386025/pexels-photo-386025.jpeg?cs=srgb&dl=pexels-nubia-navarro-%28nubikini%29-386025.jpg&fm=jpg'></img>
-          <div className={styles.title}>Popular</div>
+          <div className={styles.title}>POPULAR</div>
         </div>
         <div className={styles.imageWrapper}>
           <img  alt= '' src='https://images.pexels.com/photos/8409849/pexels-photo-8409849.jpeg?cs=srgb&dl=pexels-hanna-auramenka-8409849.jpg&fm=jpg'></img>
-          <div className={styles.title}>Educational</div>
+          <div className={styles.title}>EDUCATIONAL</div>
         </div>
         <div className={styles.imageWrapper}>
           <img  alt= '' src='https://images.pexels.com/photos/264907/pexels-photo-264907.jpeg?cs=srgb&dl=pexels-pixabay-264907.jpg&fm=jpg'></img>
-          <div className={styles.title}>For babies</div>
+          <div className={styles.title}>FOR LITTLE BABIES</div>
         </div>
         <div className={styles.imageWrapper}>
           <img  alt= '' src='https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg?cs=srgb&dl=pexels-moose-photos-1037995.jpg&fm=jpg'></img>
-          <div className={styles.title}>Interactive</div>
+          <div className={styles.title}>VERY INTERESTING</div>
         </div>
         
       </Slider>
@@ -78,12 +78,12 @@ const Component = ({ products, fetchProducts }) => {
           component={Link}
           to={'/shop'}
         >
-            FIND TOY AND ADD TO CART
+            BUY NOW
         </Button>
       </div>
       <ContainerPlus>
         <div className={styles.productsWrapper}>
-          <h1> FIND TOY AND ADD TO CART </h1>
+          <h1> TOYS IN OUR SHOP </h1>
           <div className={styles.boxesWrapper}>
             {products.map(data => 
               <Box key={data._id} data={data} />
