@@ -6,15 +6,52 @@
 
     .logoWrapper {
       margin-top: -50px;
-      background-color: rgba(199, 236, 238,1.0);
-      height: 720px;
+      //background-color: rgba(199, 236, 238,1.0);
+      background-image: url("https://images.pexels.com/photos/8923962/pexels-photo-8923962.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 740px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
       h1 {
         text-align: center;
         color: $colorGrey;
         font-weight: 100;
-        margin-bottom: 50px;
-     
-      }
+        margin-bottom: 50px;     
+      }    
+      .icon {
+        width: 150px;
+        height: 100vh;
+        position: fixed;
+        left: 5px;
+        top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 997;
+      
+        a {
+          color: grey;
+          padding: 10px;
+          border: 5px solid rgba(255, 184, 184,1.0);
+          border-radius: 50%;
+          margin: 5px;
+          font-size: 40px;
+          line-height: 40px;
+          transition: all 1s;
+          animation: opacity 1s ease-in-out;
+      
+          &:hover {
+            background: white;
+            color: pink;
+          }
+        }
+      }            
     }
 
     .slider {
@@ -68,13 +105,14 @@
 
     .sliderContent {
         position: absolute;
-        top: 15%;
+        top: 10%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 998;
         width: 1000px;
         height: 150px;
-        background: rgba(243, 230, 230, 0.9);
+        background: rgba(243, 230, 230, 1.0);
+        //background: rgba(199, 236, 238,1.0);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -96,10 +134,11 @@
             color: rgba(255, 184, 184,1.0);
             letter-spacing: 15px;
             font-family: cursive;
-            
+                        
             h1 {
               margin: 0;
             }
+            
           }
         }
       }

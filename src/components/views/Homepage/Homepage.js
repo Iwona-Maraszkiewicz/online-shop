@@ -23,18 +23,20 @@ const Component = ({ products, fetchProducts }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-          
+        
   };
 
   return (
     <div className={styles.root}>
       
-        <div className={styles.logoWrapper}>
-          <h1> FIND TOY AND ADD TO CART </h1>
-          <div className={styles.imageWrapper}>
-          
-          <div className={styles.title}>Interactive</div>
-        </div>
+        <div className={styles.logoWrapper}>                                           
+                     
+            <div className={styles.icon}>
+              <a href='http://www.facebook.com'><i className="fab fa-facebook-square"></i></a>
+              <a href='http://www.instagram.com'><i className="fab fa-instagram"></i></a>
+              <a href='http://www.twitter.com'><i className="fab fa-twitter"></i></a>
+            </div>
+         
         </div>
       
       <Slider {...settings} className={styles.slider}>
@@ -64,6 +66,7 @@ const Component = ({ products, fetchProducts }) => {
         <div className={styles.wrapper}>
           <div className={styles.topContent}>
             <h1>TOYS PARADISE</h1>
+            
           </div>          
         </div>
       </div> 
