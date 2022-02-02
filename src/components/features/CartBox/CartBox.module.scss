@@ -17,8 +17,8 @@
       justify-content: center;
       top: 20px;
       right: 20px;
-      background: $colorGreen;
-      border-radius: 50%;
+      background: $colorDarkPink;
+      border-radius: 5%;
       color: $colorWhite;
       font-size: 20px;
       cursor: pointer;
@@ -38,6 +38,7 @@
         width: 100%;
         resize: none;
         padding: 3px;
+        //background: $colorBlue;
 
       }
     }

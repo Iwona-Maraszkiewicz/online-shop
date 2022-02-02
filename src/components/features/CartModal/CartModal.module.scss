@@ -2,10 +2,10 @@
 
 .cart {
   position: relative;
-
+  
   .cartHeader {
-    color: $colorWhite;
-    background: $colorActiveGreen;
+    color: $colorGrey;
+    background: $colorDarkPink;
     width: 400px;
     position: relative;
 
@@ -25,22 +25,23 @@
   .cartMain {
     height: calc(100% - 270px);
     overflow: auto;
-    
+    //background: $colorBlue;
   }
   .priceWrapper{
       //position: absolute;
       left: 10px;
       bottom: 120px;
-
-
+      background: $colorLightPink;
+      
       h3{
-        margin: 10px 0;
+        margin-bottom: 30px;
         margin-left: 30px;
       }
   }
 
 
   .cartFooter {
+    background: $colorBlue;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -52,20 +53,21 @@
     justify-content: center;
 
     a {
-      background: $colorGreen;
+      background-color: $colorDarkPink;
+      color: $colorGrey;
       height: 50px;
       width: 200px;
-      color: $colorWhite;
       font-size: 20px;
       transition: all 0.7s;
       text-align: center;
       line-height: 250%;
       background-position: 100% 0;
-      background-size: 300%;
-      background-image: linear-gradient(90deg, $colorActiveGreen 50%, transparent 10%);
-
+      border: 1px solid $colorGrey;
+      border-radius: 5%;
+      
       &:hover {
-        background-position: 0 100%;
+        background: #ffb8b8; 
+        color: $colorWhite;
       }
     }
 

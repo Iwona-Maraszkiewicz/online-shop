@@ -30,7 +30,7 @@ const Component = ({ data, removeFromCart, changeDescription }) => {
         </div>
       </div>
       <div className={styles.bottomWrapper}>
-        <textarea placeholder='Add detail information' value={description} onChange={handleChangeDescription}></textarea>
+        <textarea placeholder='Enter your message to the seller here' value={description} onChange={handleChangeDescription}></textarea>
       </div>
     </div>
   );

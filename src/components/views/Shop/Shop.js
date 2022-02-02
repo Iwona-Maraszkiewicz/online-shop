@@ -15,9 +15,9 @@ const Component = ({products, fetchProducts}) => {
   return (
     <div className={styles.root}>
       <div className={styles.banner}>
-        <h1>TOYS SHOP</h1>
+        <h1>TOYS PARADISE</h1>
       </div>
-      <h2 className={styles.subTitle}>FIND TOY AND ADD TO CART</h2>
+      <h2 className={styles.subTitle}>FIND TOY AND BUY NOW</h2>
       <ContainerPlus>
         <div className={styles.products}>
           {products.map(data => 

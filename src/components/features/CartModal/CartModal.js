@@ -20,10 +20,10 @@ const Component = ({ removeModal, modalData, cartData, fetchCart }) => {
   
 
   return (
-    <Drawer anchor='right' open={modalData} onClose={() => removeModal()} className={styles.cart}>
+    <Drawer anchor='left' open={modalData} onClose={() => removeModal()} className={styles.cart}>
       <div className={styles.cartHeader}>
-        <span onClick={() => removeModal()}>{'>'}</span>
-        <h2>Cart</h2>
+        <span onClick={() => removeModal()}>{'<'}</span>
+        <h2>Order</h2>
       </div>
       <div className={styles.cartMain}>
         {cartData.map((data, index) =>
@@ -34,7 +34,7 @@ const Component = ({ removeModal, modalData, cartData, fetchCart }) => {
         <h3>{price} $</h3>
       </div>
       <div className={styles.cartFooter}>
-        <Link to='/cart' onClick={removeModal}> Cart</Link>
+        <Link to='/cart' onClick={removeModal}> Order</Link>
       </div>
     </Drawer>
   );

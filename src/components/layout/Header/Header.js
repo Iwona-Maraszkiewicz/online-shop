@@ -24,7 +24,7 @@ const Component = ({ className }) => {
         <HashLink to='/contact' smooth>Contact</HashLink>
       </div>
       <div className={clsx(className, styles.header_column)}>
-        <HashLink to='/cart' smooth>Cart</HashLink>
+        <HashLink to='/cart' smooth>Order</HashLink>
       </div>
     </nav>
   );

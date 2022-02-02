@@ -33,28 +33,30 @@ const Component = ({ cart }) => {
   return (
     <ContainerPlus className={styles.root}>
       <div className={styles.leftWrapper}>
-        <h2>Your products in Cart</h2>
+        <h2>Your orders</h2>
         {cart.map(data => {
           price += data.price * data.quantity;
           return <CartBox key={data.id} data={data} />;
         })}
       </div>
-      <div className={styles.rightWrapper}>
-        <h2>Order Summary</h2>
+      <div className={styles.centerWrapper}>
+        <h2>Delivery and payment</h2>
         <div className={styles.price}><p>Subtotal</p><p>${price}</p></div>
         <div className={styles.price}><p>Delivery</p><p>FREE</p></div>
         <div className={styles.price}><p>Total</p><p>${price}</p></div>
-
-        <form>
+      </div> 
+      <div> 
+        <form className={styles.rightWrapper}>
+          <h2>The order form</h2>
           <input type='text' placeholder='First name' onChange={e => e.target.value.length > 0 ? setFirstName(true) : setFirstName(false)}></input>
           <input type='text' placeholder='Last name' onChange={e => e.target.value.length > 0 ? setLastName(true) : setLastName(false)}></input>
           <input type='email' placeholder='E-mail' onChange={e => e.target.value.length > 0 ? setEmail(true) : setEmail(false)}></input>
-          <input type='text' placeholder='City' onChange={e => e.target.value.length > 0 ? setCity(true) : setCity(false)}></input>
           <input type='text' placeholder='Street' onChange={e => e.target.value.length > 0 ? setStreet(true) : setStreet(false)}></input>
           <input type="text" pattern="[0-9]{2}\-[0-9]{3}" placeholder='Post code' onChange={e => e.target.value.length > 0 ? setPostCode(true) : setPostCode(false)}></input>
+          <input type='text' placeholder='City' onChange={e => e.target.value.length > 0 ? setCity(true) : setCity(false)}></input>
           {required && <h3 className={styles.required}>Complete the form</h3>}
           <div className={styles.btnWrapper}>
-            <button className={styles.btn} type='submit' onClick={(e) => handleSubmit(e)}>SEND</button>
+            <button className={styles.btn} type='submit' onClick={(e) => handleSubmit(e)}>Order</button>
           </div>
         </form>
       </div>

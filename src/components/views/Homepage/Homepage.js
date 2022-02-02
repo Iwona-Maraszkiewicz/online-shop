@@ -70,7 +70,7 @@ const Component = ({ products, fetchProducts }) => {
           </div>          
         </div>
       </div> 
-      <div className={styles.bottomContent}>
+      {/*<div className={styles.bottomContent}>
         <Button
           className={styles.button}
           variant='contained'
@@ -80,7 +80,7 @@ const Component = ({ products, fetchProducts }) => {
         >
             BUY NOW
         </Button>
-      </div>
+  </div>*/}
       <ContainerPlus>
         <div className={styles.productsWrapper}>
           <h1> TOYS IN OUR SHOP </h1>

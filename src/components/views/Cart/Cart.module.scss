@@ -5,7 +5,7 @@
   min-height: calc(100vh - 50px);
   display: flex !important;
   position: relative;
-
+  //background: $colorBlue;
 
   h2 {
     font-weight: 100;
@@ -16,12 +16,17 @@
   }
 
   .leftWrapper {
-    flex: 1;
+    //flex: 0.3;
+    width: 800px;
     padding-right: 30px;
+    //background: $colorBlue;
   }
 
-  .rightWrapper {
-    flex: 0.6;
+  .centerWrapper {
+    //flex: 0.6;
+    //flex: 0.3;
+    width: 500px;
+    padding-right: 30px;
 
     .price {
       display: flex;
@@ -39,10 +44,15 @@
         font-weight: bold;
       }
     }
+        
+  }
+  .rightWrapper {
+    //flex: 0.6;
+   // flex: 0.3;
+    
     form {
-        padding-top: 15px;
+      padding-top: 15px;
     }
-
 
     input {
       width: 100%;
@@ -51,6 +61,7 @@
       border: 1px solid #bbb;
       line-height: 15px;
       margin-bottom: 5px;
+      //background: $colorBlue;
 
       &:focus-visible {
         outline: none;
@@ -63,15 +74,21 @@
         margin-top: 20px;
         width: 200px;
         padding: 20px 0;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 5px;
+        font-style: cursive;
         cursor: pointer;
-        background: transparent;
+        //background: transparent;
+        background-color: $colorLightPink;
+        color: $colorGrey;
         border-radius: 5px;
         outline: none;
         border: 1px solid #bbb;
         transition: all 0.7s;
 
         &:hover {
-          background: $colorGreen;
+          background: $colorDarkPink;
           color: $colorWhite;
         }
       }
@@ -80,6 +97,7 @@
 }
 
 .required{
-  color: $colorGreen;
+  color: $colorDarkPink;
   text-align: center;
+  text-transform: uppercase;
 }
