@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-
 import { connect } from 'react-redux';
 import { removeModal, getModal } from '../../../redux/modalRedux.js';
 import { getCartData, fetchCart } from '../../../redux/cartRedux.js';
@@ -15,9 +14,7 @@ const Component = ({ removeModal, modalData, cartData, fetchCart }) => {
   }, [cartData]);
   let price = 0;
   
-  cartData.map(data => price += (data.price * data.quantity));
-  
-  
+  cartData.map(data => price += (data.price * data.quantity));  
 
   return (
     <Drawer anchor='left' open={modalData} onClose={() => removeModal()} className={styles.cart}>

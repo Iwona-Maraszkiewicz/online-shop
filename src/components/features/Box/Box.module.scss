@@ -53,11 +53,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #ffcccc;
+        background-color: $colorLightPink;
         font-family: cursive;  
         
         a {
-          color: $colorBlack;          
+          color: $colorGrey;          
           text-decoration: none;
           font-size: 20px;
           padding: 10px 30px;
@@ -66,7 +66,7 @@
           
           &:hover{
             color: $colorWhite;
-            background-color: #ffb8b8;            
+            background-color: $colorDarkPink;            
           }
         }
       }

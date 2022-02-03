@@ -1,6 +1,4 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
-
 import { Link } from 'react-router-dom';
 import styles from './NotFound.module.scss';
 
@@ -12,10 +10,6 @@ const Component = () => (
     </div>
   </div>
 );
-
-//Component.propTypes = {
-//};
-
 
 export {
   Component as NotFound,

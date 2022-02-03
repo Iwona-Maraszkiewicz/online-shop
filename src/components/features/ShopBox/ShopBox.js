@@ -6,7 +6,6 @@ import { QuantityButton } from '../../common/QuantityButton/QuantityButton';
 import { Link } from 'react-router-dom';
 import { addToCart } from '../../../redux/cartRedux';
 import { addModal } from '../../../redux/modalRedux';
-//import { Button } from '@material-ui/core';
 import { v4 as uuidv4 } from 'uuid';
 
 const Component = ({image, name, price, _id, addModal, addToCart}) => {
@@ -28,7 +27,7 @@ const Component = ({image, name, price, _id, addModal, addToCart}) => {
       <h4>{name}</h4>
       <h4>{price} $ </h4>
       <QuantityButton quantity={quantity} setQuantity={setQuantity} />
-      <span className={styles.cartButton} onClick={() => handleAddToCart()}>Add to Cart</span>
+      <span className={styles.cartButton} onClick={() => handleAddToCart()}>ADD TO CART</span>
     </div>
       );
     };
@@ -42,10 +41,6 @@ Component.propTypes = {
   addToCart: PropTypes.func,
   addModal: PropTypes.func,
 };
-
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
 
 const mapDispatchToProps = (dispatch, props) => ({
   addToCart: arg => dispatch(addToCart(arg)),

@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { QuantityButton } from '../../common/QuantityButton/QuantityButton';
-
 import { connect } from 'react-redux';
 import { removeFromCart, changeDescription } from '../../../redux/cartRedux';
-
 import styles from './CartBox.module.scss';
 
 const Component = ({ data, removeFromCart, changeDescription }) => {
@@ -42,10 +40,6 @@ Component.propTypes = {
   removeFromCart: PropTypes.func,
   changeDescription: PropTypes.func,
 };
-
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
 
 const mapDispatchToProps = dispatch => ({
   removeFromCart: arg => dispatch(removeFromCart(arg)),

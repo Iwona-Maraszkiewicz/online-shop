@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Container as ContainerPlus } from '@material-ui/core';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getCartData } from '../../../redux/cartRedux';
 import { CartBox } from '../../features/CartBox/CartBox';
-
 import styles from './Cart.module.scss';
 
 const Component = ({ cart }) => {
@@ -33,21 +31,21 @@ const Component = ({ cart }) => {
   return (
     <ContainerPlus className={styles.root}>
       <div className={styles.leftWrapper}>
-        <h2>Your orders</h2>
+        <h2>YOUR ORDERS</h2>
         {cart.map(data => {
           price += data.price * data.quantity;
           return <CartBox key={data.id} data={data} />;
         })}
       </div>
       <div className={styles.centerWrapper}>
-        <h2>Delivery and payment</h2>
-        <div className={styles.price}><p>Subtotal</p><p>${price}</p></div>
-        <div className={styles.price}><p>Delivery</p><p>FREE</p></div>
-        <div className={styles.price}><p>Total</p><p>${price}</p></div>
+        <h2>DELIVERY AND PAYMENT</h2>
+        <div className={styles.price}><p>SUBTOTAL</p><p>${price}</p></div>
+        <div className={styles.price}><p>DELIVERY</p><p>FREE</p></div>
+        <div className={styles.price}><p>TOTAL</p><p>${price}</p></div>
       </div> 
       <div> 
         <form className={styles.rightWrapper}>
-          <h2>The order form</h2>
+          <h2>THE ORDER FORM </h2>
           <input type='text' placeholder='First name' onChange={e => e.target.value.length > 0 ? setFirstName(true) : setFirstName(false)}></input>
           <input type='text' placeholder='Last name' onChange={e => e.target.value.length > 0 ? setLastName(true) : setLastName(false)}></input>
           <input type='email' placeholder='E-mail' onChange={e => e.target.value.length > 0 ? setEmail(true) : setEmail(false)}></input>
@@ -56,15 +54,13 @@ const Component = ({ cart }) => {
           <input type='text' placeholder='City' onChange={e => e.target.value.length > 0 ? setCity(true) : setCity(false)}></input>
           {required && <h3 className={styles.required}>Complete the form</h3>}
           <div className={styles.btnWrapper}>
-            <button className={styles.btn} type='submit' onClick={(e) => handleSubmit(e)}>Order</button>
+            <button className={styles.btn} type='submit' onClick={(e) => handleSubmit(e)}>ORDER</button>
           </div>
         </form>
       </div>
     </ContainerPlus>
   );
 };
-
-
 
 Component.propTypes = {
   cart: PropTypes.array,
@@ -74,10 +70,6 @@ Component.propTypes = {
 const mapStateToProps = state => ({
   cart: getCartData(state),
 });
-
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
 
 const Container = connect(mapStateToProps)(Component);
 

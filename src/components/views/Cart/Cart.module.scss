@@ -5,35 +5,35 @@
   min-height: calc(100vh - 50px);
   display: flex !important;
   position: relative;
-  //background: $colorBlue;
-
+  
   h2 {
     font-weight: 100;
-    border-bottom: 1px solid #bbb;
-    padding-bottom: 10px;
+    border: 1px solid $colorLightPink;
+    border-radius: 3%;
+    background: $colorLightPink;
+    padding: 5px;
     margin: 0;
     margin-bottom: 10px;
+    color: $colorGrey;
+    text-align: center;
   }
 
   .leftWrapper {
-    //flex: 0.3;
     width: 800px;
-    padding-right: 30px;
-    //background: $colorBlue;
+    padding-right: 50px;    
   }
 
   .centerWrapper {
-    //flex: 0.6;
-    //flex: 0.3;
     width: 500px;
-    padding-right: 30px;
-
+    padding-right: 50px;
+    
     .price {
       display: flex;
-      justify-content: space-between;
-
+      justify-content: space-around;
+      color: $colorGrey;
+      
       &:nth-of-type(2) {
-        border-bottom: 1px solid #bbb;
+        border-bottom: 1px solid $colorLightPink;
         padding-bottom: 15px;
       }
       &:nth-of-type(3) {
@@ -47,8 +47,6 @@
         
   }
   .rightWrapper {
-    //flex: 0.6;
-   // flex: 0.3;
     
     form {
       padding-top: 15px;
@@ -58,11 +56,11 @@
       width: 100%;
       padding: 10px;
       border-radius: 5px;
-      border: 1px solid #bbb;
+      border: 1px solid $colorWhite;
+      border-bottom: 1px solid $colorLightPink;;
       line-height: 15px;
       margin-bottom: 5px;
-      //background: $colorBlue;
-
+      
       &:focus-visible {
         outline: none;
       }
@@ -79,12 +77,11 @@
         letter-spacing: 5px;
         font-style: cursive;
         cursor: pointer;
-        //background: transparent;
         background-color: $colorLightPink;
         color: $colorGrey;
         border-radius: 5px;
         outline: none;
-        border: 1px solid #bbb;
+        border: 1px solid $colorLightPink;
         transition: all 0.7s;
 
         &:hover {
@@ -100,4 +97,42 @@
   color: $colorDarkPink;
   text-align: center;
   text-transform: uppercase;
+}
+
+@media (max-width: 767px){
+  .root {
+    flex-direction: column;
+    padding-top: 100px;
+    .leftWrapper {
+      width: 500px;
+      padding-right: 30px;
+    }
+    .centerWrapper {
+      width: 500px;
+      padding-right: 30px;    
+    }
+    .rightWrapper {
+      width: 500px;
+      padding-right: 30px;
+    }
+    .btn {
+      margin-bottom: 20px;
+    }
+}
+}
+@media (max-width: 500px){
+  .root {
+    .leftWrapper {
+      width: 300px;
+      padding-right: 10px;
+    }
+    .centerWrapper {
+      width: 300px;
+      padding-right: 10px;    
+    }
+    .rightWrapper {
+      width: 300px;
+      padding-right: 10px;
+    }
+}
 }

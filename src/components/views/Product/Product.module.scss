@@ -42,7 +42,7 @@
           font-size: 50px;
           font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
           font-weight: bold;
-          color: $colorBlack;
+          color: $colorGrey;
           background-color: $colorWhite;
         }
       }
@@ -68,7 +68,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;  
-        border: 1px solid lightGrey;
+        border: 1px solid $colorVeryLightGrey;
         border-radius: 2%; 
         color: $colorGrey;
 
@@ -87,13 +87,13 @@
           font-family: cursive;
         }
         h5 {
-          color: rgba(168, 164, 164, 0.863);
+          color: $colorGreyProduct;
           letter-spacing: 1px;
           font-weight: 200;
           font-family: cursive;
         }
         .quantity{
-          border: 1px solid lightGrey;
+          border: 1px solid $colorVeryLightGrey;
           padding: 0 5px;
             input{
                 text-align: center;
@@ -108,7 +108,7 @@
         }
 
         .btn{
-          border: 1px solid lightGrey;
+          border: 1px solid $colorVeryLightGrey;
           border-radius: 0;
           margin-top: 10px;
         }

@@ -2,8 +2,8 @@
 
 .root {
     width: 240px;
-    border: 1px solid $colorBlack;
-    margin: 15px 5px;
+    border: 1px solid $colorGrey;
+    margin: 15px 10px;
 
     .imageWrapper{
       height: 160px;
@@ -11,6 +11,7 @@
       position: relative;
       overflow: hidden;
       display: block;
+      color: $colorGrey;
 
       img{
         width: 100%;
@@ -22,16 +23,17 @@
     h4{
       margin: 5px 0;
       text-align: center;
-      color: gray;
+      color: $colorGrey;
     }
     .cartButton{
       background: $colorLightPink;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
-      height: 40px;
-      color: $colorBlack;
+      font-size: 16px;
+      font-weight: 600;
+      height: 50px;
+      color: $colorGrey;
       cursor: pointer;
       
       &:hover {

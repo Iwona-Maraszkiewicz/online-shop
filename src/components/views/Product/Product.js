@@ -6,7 +6,6 @@ import { addToCart} from '../../../redux/cartRedux';
 import { addModal } from '../../../redux/modalRedux';
 import styles from './Product.module.scss';
 import { Container as ContainerPlus } from '@material-ui/core';
-//import { Link } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
 import { Button } from '@material-ui/core';
 import Slider from 'react-slick';
@@ -16,7 +15,6 @@ const Component = ({ product, fetchOneProduct, addModal, addToCart }) => {
   useEffect(() => {
     fetchOneProduct();
   }, []);
-
 
   const { image, price, name, text, image2, image3} = product;
   const [quantity, setQuantity] = React.useState(1);
